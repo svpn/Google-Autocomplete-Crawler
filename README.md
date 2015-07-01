@@ -5,6 +5,10 @@ Google Suggest Crawler contains a script to automatically mine suggestions off G
 Note that everything breaks the moment google changes their endpoint. 
 
 ### Usage
+
+
+#### Suggest.py
+
 Crawling your own data
 
 ```
@@ -41,13 +45,31 @@ Running the script without arguments will take seedwords from example.csv and wr
 
 Note the currently supported file formats are only CSV for input (it uses a CSV parser) and a txt file for output. (I think you may output to CSV too if you like but I have not tested it).
 
+#### Cutter.py
+
+You might want to use the cutter to slice up a long txt file after crawling. 
+
+For example, google adwords only allows max of 3000 per input file. 
+
+Run
+```
+python cutter.py -i example.txt -n 3000
+
+```
+Where n is the segmented file size and i is the input file. If no input file is specified, result.txt is used by default.
+if the file is empty or too small, the script will not run.
+
+Make sure the file is in the same directory as cutter.py before running. 
+
+All sliced files are then created in the cut-files directory
+
+
 ### Explanation of other files and utilities
 1. UtlityScript folder contains several scripts I use for cleaning data. They are not packaged for easy usage just yet. It is on the to-do list for now. It is also very customised to one specific use-case. You may need to hack around a little to use it for what you need. Not all these scripts have their dependencies installed in the virtual env. They might be in the future. 
 2. Do not look into deprecated. They are lots of junk in there. You should not find anything useful
 3. ProcessedData are crawled CSVs files that have already been successfully crawled.
-4. Adwords folder is to store temporary files (that are being cut) before passing into Google Keyword planner tool (they only accept 3000 queries per input file). This is to get the counts. 
-5. Deliverables contain crawled data. 
+4. Deliverables contain crawled data. 
 
 ### Version
-0.0.1
+0.0.2
 
