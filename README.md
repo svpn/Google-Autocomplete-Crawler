@@ -1,6 +1,6 @@
-# Google Suggest Crawler
+# Google Autocomplete Crawler
 
-Google Suggest Crawler contains a script to automatically mine suggestions off Google Suggest. This repo contains a main script to crawl data off Google Suggest. It takes in a list of keywords (which I will call Seed-words) and then generate approx 200+ suggestions by appending prefixes and suffixes to the original seed-word.
+Google Autocomplete Crawler contains a script to automatically mine suggestions off Google Suggest. This repo contains a main script to crawl data off Google Autocomplete. It takes in a list of keywords (which I will call Seed-words) and then generate approx 200+ suggestions by appending prefixes and suffixes to the original seed-word.
 
 Note that everything breaks the moment google changes their endpoint. 
 
